@@ -4,17 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thế Giới Tinh Dịch Nữ Tôn · Hướng Dẫn Mở Đầu</title>
-  <style>
-      /* 1. Ép tất cả các chữ dùng font hệ thống để không bị lỗi dấu Tiếng Việt */
+ <style>
+      /* 1. Đổi font chữ hệ thống mượt cho tiếng Việt */
       html, body, *, ::before, ::after {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
       }
       
-      /* 2. Ép tất cả các đoạn văn bản (Tên card, giới thiệu) tự động xuống dòng khi chạm cạnh */
-      p, span, div, h1, h2, h3, h4, h5, h6 {
+      /* 2. Cưỡng chế bẻ dòng, chống tràn ngang tuyệt đối cho tất cả thẻ chứa chữ */
+      p, span, div, h1, h2, h3, h4, h5, h6, a, text {
+        white-space: normal !important;
         word-break: break-word !important;
         overflow-wrap: break-word !important;
-        white-space: normal !important;
+        display: inline-block; /* Hoặc dùng block tùy thuộc cấu trúc, nhưng inline-block an toàn nhất */
+        max-width: 100% !important;
+      }
+
+      /* 3. Đảm bảo các khung cha chứa text không bị kéo giãn quá màn hình */
+      .flex, .grid, div[class*="layout"] {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
       }
     </style>
     <script type="module" crossorigin>(function(){const l=document.createElement("link").relList;if(l&&l.supports&&l.supports("modulepreload"))return;for(const c of document.querySelectorAll('link[rel="modulepreload"]'))u(c);new MutationObserver(c=>{for(const h of c)if(h.type==="childList")for(const d of h.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&u(d)}).observe(document,{childList:!0,subtree:!0});function o(c){const h={};return c.integrity&&(h.integrity=c.integrity),c.referrerPolicy&&(h.referrerPolicy=c.referrerPolicy),c.crossOrigin==="use-credentials"?h.credentials="include":c.crossOrigin==="anonymous"?h.credentials="omit":h.credentials="same-origin",h}function u(c){if(c.ep)return;c.ep=!0;const h=o(c);fetch(c.href,h)}})();var Xr={exports:{}},hl={};/**
